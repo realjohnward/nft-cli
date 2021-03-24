@@ -161,6 +161,18 @@ def fmt_date_from_block(Block='latest', fmt='%m/%d/%y', **kwargs):
 def fmt_dates_from_blocks(blocks, **kwargs):
     return [fmt_date_from_block(block, **kwargs) for block in blocks]
 
+def block_to_datetime(Block='latest'):
+    if Block:
+        try:
+            ts = w3.eth.get_block(Block).timestamp
+            return datetime.fromtimestamp(ts)
+        except Exception as e:
+            pass
+    return None
+
+def blocks_to_datetimes(blocks):
+    return [block_to_datetime(b) for b in blocks]
+
 def fmt_id(ID=None):
     return f'<a href="https://opensea.io/assets/{contract_addr_str}/{ID}">#{ID}</a>'
 
