@@ -14,10 +14,7 @@
 <code>pip install -r requirements.txt</code>
 <li>Set your Mainnet endpoint url by running this script</li>
 <code>python config.py #copy/paste your endpoint when prompted for mainnet_url</code>
-<li>CD into the src directory and run the script</li>
-<code></code>
-</ol>
-
+<li>CD into the src directory and run the scripts</li>
 <code>python show.py cryptopunks sales_tables 4152,4153</code>
 <hr>
 <div style="background-color: white;">
@@ -79,9 +76,10 @@
 </div>
 </body>
 <hr>
-<p>Then run:</p>
+<br/>
 <code>python show.py cryptopunks sales_charts 4152</code>
 <img src="./examples/cryptopunks_sales_charts_4152.jpg" />
+</ol>
 <br/>
 <h3>How to Use</h3> 
 <p>This is the template to use when you want to run a script</p>
