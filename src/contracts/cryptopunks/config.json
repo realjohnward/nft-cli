@@ -1,2 +1,2 @@
 {"address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb","id": "punkIndex", "events": {"sales": "PunkBought", "bids": "PunkBidEntered"}, 
-"txn_receipt_keys": {"ID": "result['args']['punkIndex']", "Txn": "result['transactionHash'].hex()", "Block": "result['blockNumber']","Value (Eth)": "result['args']['value']"}}
+"txn_receipt_keys": {"ID": "result['args']['punkIndex']", "Txn": "result['transactionHash'].hex()", "Block": "result['blockNumber']","Wei": "result['args']['value']"}}

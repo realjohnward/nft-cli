@@ -4,8 +4,8 @@
 {% set row1_id = nft_df.ID|row1cv %}
 {% set img_html = row1_id|opensea_img_url_by_id|img_by_url %}
 <div class="nft-container">
-{{ img_html|figure(row1_id|figcaption)|centered(br=2) }}
-{{ nft_df|table|centered }}
+{{ img_html|figure(row1_id|fmt_id|figcaption)|centered(br=2) }}
+{{ nft_df|transform(['Txn = @fmt_txns(Txn)','Date = @fmt_dates_from_blocks(Block)','Ether = @weis_to_ethers(Wei)'])|table(columns=['Txn','Date','Ether'])|centered }}
 </div>
 <hr>
 {% endfor %}

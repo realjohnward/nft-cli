@@ -1,7 +1,6 @@
 import json 
 
 keys = ["mainnet_url"]
-
 results = {}
 
 for k in keys:
@@ -10,4 +9,3 @@ for k in keys:
     results[k] = v 
 
 json.dump(results, open("./defaults.json", "w"))
-print("Done")

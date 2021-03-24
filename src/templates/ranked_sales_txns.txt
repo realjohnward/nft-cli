@@ -1,0 +1,6 @@
+{% set nft_df = config['events']['sales']|parse_txn_receipts(config['id'])|df_from_records|transform(['Txn = @fmt_txns(Txn)','Date = @fmt_dates_from_blocks(Block)','Ether = @weis_to_ethers(Wei)']) %}
+{% set nft_df = nft_df.sort_values('Ether',ascending=False).head(10)|rank('Ether')|transform(['Img = @img_urls_to_imgs(@ids_to_opensea_img_urls(ID))']) %}
+{{ "Top 10 NFT Sales"|s|h4|centered }}
+{{ nft_df.plot(kind="bar",x="Rank",y="Ether")|chart(w=500,h=500)|centered }}
+<hr>
+{{ nft_df|table(columns=['Rank','Img','ID','Ether','Txn','Date']) }}
