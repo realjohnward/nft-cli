@@ -1,0 +1,11 @@
+{% set nft_dfs = config['events']['sales']|parse_txn_receipts(config['id'])|df_from_records|groupby("ID") %}
+{{ "NFT Sales"|h4|centered }}
+{% for nft_df in nft_dfs %}
+{% set row1_id = nft_df.ID|row1cv %}
+{% set img_html = row1_id|opensea_img_url_by_id|img_by_url %}
+<div class="nft-container">
+{{ img_html|figure(row1_id|figcaption)|centered(br=2) }}
+{{ nft_df|table|centered }}
+</div>
+<hr>
+{% endfor %}
