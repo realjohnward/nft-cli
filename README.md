@@ -1,23 +1,28 @@
-# NFT-CLI
-
-Command-line interface for visualizing NFTs
-
-## Requirements
-Python 3.6 <=
-Http Provider (e.g. Infura)
-
-## Setup 
-        pip install -r requirements.txt
-        python config.py
-
-## How to use
-        python show.py <contract name> <template filename> <list of token ids (separated by comma) or "all">
-
-## Examples 
-        python show.py cryptopunks sales 4152,4153,4154,4155
-
-        ```html
+<html>
+<head>
+<style type="text/css">
+code { background-color: gray; color: white; }
+</style>
+</head>
 <body>
+<h1>NFT-CLI</h1>
+<p>Command-line interface for visualizing NFTs</p>
+<br/>
+<h3>Requirements</h3>
+<ul>
+<li>Python 3.6 <=</li>
+<li>Http Provider (e.g. Infura)</li>
+<br/>
+<h3>Setup</h3>
+<code>pip install -r requirements.txt<br/>python config.py</code>
+<br/>
+<h3>Setup</h3> 
+<code>python show.py <contract name> <template filename> <list of token ids (separated by comma) or "all"></code>
+<br/>
+<h4>Examples</h4> 
+<code>python show.py cryptopunks sales 4152,4153</code>
+<hr>
+<div>
 <center><h4>NFT Sales</h4></center>
 <div class="nft-container">
 <center><figure><img src="https://lh3.googleusercontent.com/zRiOmqtsV1xBlKB5QT7_yS82BnCECxhlxeyOYT342gEMRIwrqhdRGMY2vvQ_v8A11edjThkEI9n5vd5dVTNpvuoFIzrmI4wGF-8kzs8" width="100" height="100"><figcaption><a href="https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/4152">#4152</a></figcaption></figure></center><br><br>
@@ -54,9 +59,6 @@ Http Provider (e.g. Infura)
 </table></center>
 </div>
 <hr>
-
-
-
 <div class="nft-container">
 <center><figure><img src="https://lh3.googleusercontent.com/sSovmKeih9KFQvg9IZbIDt8KQBnZSRk7rFnhDT091ry6pW8S6A13b42K5pmod4hgF9iwTlvcVpM7CsNxszBoq_oabXxP3KDZV5LhcA" width="100" height="100"><figcaption><a href="https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/4153">#4153</a></figcaption></figure></center><br><br>
 <center><table border="2" class="dataframe Table">
@@ -77,51 +79,3 @@ Http Provider (e.g. Infura)
 </table></center>
 </div>
 <hr>
-
-
-
-<div class="nft-container">
-<center><figure><img src="https://lh3.googleusercontent.com/vr7gOgtRBnS3j2RdnycfpSPp-OUk2BQamwfxyaBGucqpWWVCItwIrKU12H88Go1O0xMiAKnDJT4Ym4impj6neFNr82fe68w5UGQ1pQ" width="100" height="100"><figcaption><a href="https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/4154">#4154</a></figcaption></figure></center><br><br>
-<center><table border="2" class="dataframe Table">
-  <thead>
-    <tr style="text-align: left;">
-      <th>Txn</th>
-      <th>Date</th>
-      <th>Ether</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://etherscan.io/tx/0x51520a117fdf886c3088b25d228cdf78ff1490891b62710ea4d1b7ba9adcd623">0x51520a117fdf886c30...</a></td>
-      <td><a href="https://etherscan.io/block/4100831">07/31/17</a></td>
-      <td>0.45</td>
-    </tr>
-  </tbody>
-</table></center>
-</div>
-<hr>
-
-
-
-<div class="nft-container">
-<center><figure><img src="https://lh3.googleusercontent.com/4H79IvUWlXHN0qhOi-Q7fZWvE9tgkG98OTFkCdF4p8cD58W1Lfk3AXDfZtXIHkdQXaxuKQ1f1465LMawdJ0kue8" width="100" height="100"><figcaption><a href="https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/4155">#4155</a></figcaption></figure></center><br><br>
-<center><table border="2" class="dataframe Table">
-  <thead>
-    <tr style="text-align: left;">
-      <th>Txn</th>
-      <th>Date</th>
-      <th>Ether</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://etherscan.io/tx/0x01dad54e3ae63c4bb6f9f09f2e8011f4ddc44214846000a6a898139cbfc1bf22">0x01dad54e3ae63c4bb6...</a></td>
-      <td><a href="https://etherscan.io/block/10713219">08/22/20</a></td>
-      <td>0.85</td>
-    </tr>
-  </tbody>
-</table></center>
-</div>
-<hr>
-</body>
-        ```
