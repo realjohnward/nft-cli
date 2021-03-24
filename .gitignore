@@ -1,2 +1,4 @@
 venv
 defaults.json
+*__pycache__/
+*.pyc
