@@ -1,9 +1,3 @@
-<html>
-<head>
-<style type="text/css">
-code { background-color: gray; color: white; }
-</style>
-</head>
 <body>
 <h1>NFT-CLI</h1>
 <p>Command-line interface for visualizing NFTs</p>
@@ -12,6 +6,7 @@ code { background-color: gray; color: white; }
 <ul>
 <li>Python 3.6 <=</li>
 <li>Http Provider (e.g. Infura)</li>
+</ul>
 <br/>
 <h3>Setup</h3>
 <code>pip install -r requirements.txt<br/>python config.py</code>
@@ -22,7 +17,7 @@ code { background-color: gray; color: white; }
 <h4>Examples</h4> 
 <code>python show.py cryptopunks sales 4152,4153</code>
 <hr>
-<div>
+<div style="background-color: white;">
 <center><h4>NFT Sales</h4></center>
 <div class="nft-container">
 <center><figure><img src="https://lh3.googleusercontent.com/zRiOmqtsV1xBlKB5QT7_yS82BnCECxhlxeyOYT342gEMRIwrqhdRGMY2vvQ_v8A11edjThkEI9n5vd5dVTNpvuoFIzrmI4wGF-8kzs8" width="100" height="100"><figcaption><a href="https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/4152">#4152</a></figcaption></figure></center><br><br>
@@ -78,4 +73,6 @@ code { background-color: gray; color: white; }
   </tbody>
 </table></center>
 </div>
+</div>
 <hr>
+</body>
