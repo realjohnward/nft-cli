@@ -4,17 +4,21 @@
 <br/>
 <h3>Requirements</h3>
 <ul>
-<li>Python 3.6 <=</li>
-<li>Http Provider (e.g. Infura)</li>
+<li><b>Python 3.8:</b> click here to see setup tutorial</li>
+<li><b>Mainnet URL:</b> If you don't already have an Http Provider, <a href="https://blog.infura.io/getting-started-with-infura-28e41844cc89/">create an Infura project</a></li>
 </ul>
 <br/>
 <h3>Setup</h3>
-<code>pip install -r requirements.txt<br/>python config.py</code>
+<ol>
+<li>
+<li><p>Install python requirements</p></li>
+<code>pip install -r requirements.txt</code>
+<code>python config.py #copy/paste your Infura project's mainnet https endpoint when prompted for mainnet_url</code>
 <br/>
-<h3>Setup</h3> 
-<code>python show.py <contract name> <template filename> <list of token ids (separated by comma) or "all"></code>
+<h3>How to Use</h3> 
+<code>python show.py *contract name* *template filename* *list of token ids (separated by comma) or "all"*</code>
 <br/>
-<h4>Examples</h4> 
+<h3>Examples</h3> 
 <code>python show.py cryptopunks sales 4152,4153</code>
 <hr>
 <div style="background-color: white;">
