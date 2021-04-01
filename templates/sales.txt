@@ -1,0 +1,11 @@
+{% for contract_addr, nft_ids in contracts.items() %}
+{% set sales_df = contract_addr|get_contract_events(nft_ids)|df_from_records|transform(['Ether = @total_prices_to_ethers(total_price)','TokenID = @assets_to_token_ids(asset)','Txn = @txns_to_txn_hashes(transaction)','Date = @created_dates_to_dates(created_date)','DateBlock = @dates_to_date2block_links(Date,transaction)','Figure = @assets_to_figures(asset)']) %} 
+{% set sales_dfs = sales_df|groupby("TokenID") %}
+{% for nft_sales_df in sales_dfs %}
+<center><h3>{{ nft_sales_df.head(1)["Figure"].values[0] }}</h3></center>
+{{ nft_sales_df.to_html(columns=['Txn','Ether','quantity','DateBlock'], index=False, escape=False) }}
+<br/>
+{{ nft_sales_df.plot(kind='scatter',x='Date', y='Ether',xticks=list(nft_sales_df.Date))|chart(w=600, h=300) }}
+<hr>
+{% endfor %}
+{% endfor %}
