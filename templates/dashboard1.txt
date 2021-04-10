@@ -1,0 +1,16 @@
+{% for contract_addr, nft_ids in contracts.items() %}
+{% set sales_df = contract_addr|get_contract_events(nft_ids)|df_from_records|transform(['Ether = @total_prices_to_ethers(total_price, bid_amount)','TokenID = @assets_to_token_ids(asset)','Txn = @txns_to_txn_hashes(transaction)','Date = @created_dates_to_dates(created_date)','DateStr = @dates_to_date_strings(Date)','DateBlock = @dates_to_date2block_links(Date,transaction)','Figure = @assets_to_figures(asset)'])|sort_values('Date')|transform(['PctChange = @ethers_to_pct_changes(Ether)']) %} 
+
+{% set sales_dfs = sales_df|groupby("TokenID") %}
+{% for nft_sales_df in sales_dfs %}
+<center><h3>{{ nft_sales_df.head(1)["Figure"].values[0] }}</h3></center>
+{% set clist = nft_sales_df.event_type|get_colors({'successful': 'green', 'bid_entered': 'orange'}) %}
+{{ nft_sales_df.plot(kind='scatter',x='Date', y='Ether',c=clist,xticks=list(nft_sales_df.Date), title='Sales & Bids')|chart(w=600, h=300) }}
+<br/>
+Sales
+{{ nft_sales_df.query('event_type == "successful"')|table(columns=['DateBlock','Ether','PctChange','Txn']) }}
+Bids
+{{ nft_sales_df.query('event_type == "bid_entered"')|table(columns=['DateBlock','Ether','PctChange','Txn']) }}
+<hr>
+{% endfor %}
+{% endfor %}
